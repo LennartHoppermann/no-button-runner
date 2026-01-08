@@ -89,9 +89,9 @@ This guide will help you set up the webhook notification system for your Valenti
 
 ## How It Works
 
-1. When your girlfriend hovers over the "No" button, it jumps to a random position
+1. When your Valentine hovers over the "No" button, it jumps to a random position
 2. The button always stays within the visible screen area
-3. When she clicks "Yes", a notification is sent to you via the configured webhook
-4. She's then redirected to a page showing your restaurant reservation details
+3. When they click "Yes", a notification is sent to you via the configured webhook
+4. They're then redirected to a page showing your restaurant reservation details
 
 Enjoy your Valentine's Day! 💝

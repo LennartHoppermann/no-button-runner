@@ -51,7 +51,7 @@ yesBtn.addEventListener('click', async function() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    message: '💕 She said YES! Your Valentine accepted! 💕',
+                    message: '💕 Your Valentine said YES! 💕',
                     timestamp: new Date().toISOString()
                 })
             }).catch(err => {
