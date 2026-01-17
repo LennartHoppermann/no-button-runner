@@ -31,3 +31,24 @@ Das Projekt ist als klassische kleine Frontend-App umsetzbar, z. B. mit:
 - **React / Next.js** oder **Vanilla HTML/CSS/JS**
 - Styling: CSS / Tailwind / einfache Komponentenstruktur
 - Routing: interne Routen (z. B. `/` und `/restaurant`) oder Redirect auf eine externe Restaurant-URL
+
+## Verzeichnisstruktur (Beispiel)
+Eine mögliche Struktur für den Quellcode und die Ressourcen könnte so aussehen:
+
+```
+no-button-runner/
+├── src/
+│   ├── main.py                    (Einstiegspunkt)
+│   ├── ui/                        (GUI-Fenster)
+│   │   ├── main_window.py         (Startseite mit Frage)
+│   │   └── restaurant_window.py   (Restaurant-Seite)
+│   ├── logic/                     (Geschäftslogik)
+│   │   └── button_logic.py        (Nein-Button-Ausweich-Logik)
+│   └── utils/                     (Hilfsfunktionen)
+│       └── config.py              (Konfiguration)
+├── assets/                        (Bilder, Icons)
+├── data/                          (Restaurant-Daten)
+├── requirements.txt               (Dependencies)
+├── setup.py                       (Optional)
+└── README.md
+```

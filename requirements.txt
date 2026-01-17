@@ -1,0 +1,2 @@
+# Tkinter ist in Python enthalten, keine externe Installation nötig
+# Bei Bedarf können hier später weitere Pakete hinzugefügt werden
