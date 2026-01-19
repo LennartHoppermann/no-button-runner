@@ -2,6 +2,11 @@
 Konfiguration für das Valentinstags-Programm
 """
 
+import json
+import os
+from pathlib import Path
+
+
 # ===== FARBEN & DESIGN (Modernes, elegantes Schema) =====
 COLORS = {
     "background": "#f8f9fa",       # Sehr helles Grau (moderner als Rosa)
@@ -14,6 +19,20 @@ COLORS = {
     "white": "#ffffff",
     "border": "#e0e0e0",           # Subtiler Rand
     "shadow": "#cccccc"
+}
+
+# Dark Mode Farben
+COLORS_DARK = {
+    "background": "#1a1a1a",
+    "primary": "#ff6b9d",
+    "secondary": "#ff85b3",
+    "success": "#52b788",
+    "danger": "#e76f51",
+    "text_dark": "#f0f0f0",
+    "text_light": "#b0b0b0",
+    "white": "#2a2a2a",
+    "border": "#333333",
+    "shadow": "#000000"
 }
 
 # Button-Styling
@@ -35,15 +54,51 @@ WINDOW_CONFIG = {
     "resizable": False,
 }
 
-# ===== RESTAURANT-DATEN =====
-RESTAURANT_DATA = {
-    "name": "[Restaurant Name]",
-    "address": "Straße 123, 12345 Stadt",
-    "time": "19:00 Uhr",
-    "website": "https://example.com",  # Optional
-    "notes": "Reservierung unter: 0123 456789"
+# Carousel-Konfiguration
+CAROUSEL_CONFIG = {
+    "scroll_speed": 2,      # Pixel pro Frame (erhöhen = schneller)
+    "fps": 30,              # Target Frames pro Second
 }
 
+# ===== CONFIG-LOADER =====
+def load_config():
+    """Lade Konfiguration aus JSON"""
+    config_path = Path(__file__).parent.parent.parent / "restaurant_config.json"
+    
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Fehler beim Laden der Config: {e}")
+        return get_default_config()
+
+
+def get_default_config():
+    """Standard-Konfiguration"""
+    return {
+        "restaurant": {
+            "name": "[Restaurant Name]",
+            "address": "Straße 123, 12345 Stadt",
+            "time": "19:00 Uhr",
+            "phone": "0123 456789",
+            "website": "https://example.com",
+            "google_maps": "https://maps.google.com"
+        },
+        "theme": "light",
+        "language": "de"
+    }
+
+
+# Lade aktuelle Config
+CONFIG = load_config()
+
+# ===== RESTAURANT-DATEN =====
+RESTAURANT_DATA = CONFIG.get("restaurant", get_default_config()["restaurant"])
+
+# ===== THEME & SPRACHE =====
+CURRENT_THEME = CONFIG.get("theme", "light")
+CURRENT_LANGUAGE = CONFIG.get("language", "de")
+
 # Abstands-Schwellenwert für Button-Ausweichung (in Pixeln)
-# Je kleiner die Zahl, desto näher muss die Maus ran - je größer, desto früher springt der Button
 ESCAPE_DISTANCE = 120
+

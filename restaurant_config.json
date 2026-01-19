@@ -1,0 +1,41 @@
+{
+  "restaurant": {
+    "name": "Dante's Katerrestaurant",
+    "address": "Zuhause",
+    "time": "19:00 Uhr",
+    "phone": "0123 456789",
+    "website": "https://example.com",
+    "google_maps": "https://maps.google.com",
+    "chef_image": "assets/Dante.png",
+    "chef_name": "Der Koch"
+  },
+  "messages": {
+    "de": {
+      "question": "Willst du mein Valentinstagsschatz sein?",
+      "subtitle": "Eine kleine Überraschung für dich",
+      "yes_button": "Ja, gerne",
+      "no_button": "Nein",
+      "restaurant_title": "Dein ganz persönlicher Abend",
+      "restaurant_message": "Ich freue mich auf diesen besonderen Abend mit dir",
+      "close_button": "Bis dann!"
+    },
+    "en": {
+      "question": "Will you be my Valentine?",
+      "subtitle": "A little surprise for you",
+      "yes_button": "Yes, absolutely",
+      "no_button": "No",
+      "restaurant_title": "Your special evening",
+      "restaurant_message": "I'm looking forward to this special evening with you",
+      "close_button": "See you!"
+    }
+  },
+  "music": {
+    "enabled": true,
+    "file": "assets/musik.mp3",
+    "volume": 0.3,
+    "loop": true
+  },
+  "theme": "light",
+  "language": "de"
+}
+

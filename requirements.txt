@@ -1,2 +1,9 @@
 # Tkinter ist in Python enthalten, keine externe Installation nötig
-# Bei Bedarf können hier später weitere Pakete hinzugefügt werden
+
+# Erforderlich für Musik:
+pygame==2.4.1
+
+# Optional für erweiterte Features:
+# qrcode[pil]==7.4.2
+# Pillow==10.0.0
+# pyinstaller==6.1.0

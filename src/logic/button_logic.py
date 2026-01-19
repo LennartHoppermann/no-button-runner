@@ -17,6 +17,7 @@ class ButtonLogic:
         self.mouse_x = 0
         self.mouse_y = 0
         self.is_tracking = False
+        self.escape_count = 0  # Counter für wie oft der Button gesprungen ist
     
     def bind_button(self, button, root):
         """
@@ -84,6 +85,9 @@ class ButtonLogic:
     
     def _move_button(self):
         """Verschiebe den Button an eine zufällige Position"""
+        # Inkrementiere Counter
+        self.escape_count += 1
+        
         # Fenster-Dimensionen
         window_width = self.root.winfo_width()
         window_height = self.root.winfo_height()
